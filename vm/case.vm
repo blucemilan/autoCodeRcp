@@ -1,0 +1,57 @@
+package $package;
+import com.wonders.configuration.Config;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import com.wonders.core.BaseHome;
+import $servicePackage;
+#if($isDataDriver==true)
+import org.testng.annotations.DataProvider;
+import ${excelDataClassPackage}.${excelDataClassName};
+import com.wonders.testData.ReadTestData;
+import java.io.IOException;
+#end
+@Test(groups={""})
+public class $caseClass {
+	@Parameters({"browser"})
+	@BeforeMethod(alwaysRun = true)
+	public void setup(@Optional("Chrome")String browser) {
+		BaseHome.Launch(browser, Config.getLaunchUrl());	
+	}
+	
+	@AfterMethod()
+	public void cleanup() {
+		BaseHome.Quit();
+	}
+
+	#if($isDataDriver==true)
+@DataProvider(name = "providerTestData")
+	public Object[][] providerTestData() throws IOException {
+		return ReadTestData.readData("$excelPath", ${excelDataClassName}.class);
+	}
+
+	/**
+	 * TODO: 
+	 * @serialData:	$date
+	 */
+	@Test(description = "", dataProvider = "providerTestData", timeOut = 300000)
+	public void $caseMethod($excelDataClassName $excelDataClassNameVar) {
+		${serviceClass}.${serviceMethodName}($excelDataClassNameVar);
+	}
+	#else
+    /**
+	 * TODO:	
+	 * @author:	
+	 * @serialData:	$date
+	 * @point:	
+	 * @memo:	
+	 */
+	@Test(description = "")
+	public void $caseMethod(){		
+		${serviceClass}.${serviceMethodName}();
+	}
+	#end
+	
+}

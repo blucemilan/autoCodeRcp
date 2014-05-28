@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="libs/aopalliance-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-beanutils-1.8.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-collections-3.2.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-lang-2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-lang3-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/commons-logging-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/dom4j-1.6.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/ezmorph-1.0.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.ceclipse.printer_1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.core.databinding.beans_1.2.100.I20100824-0800.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.eclipse.nebula.widgets.ganttchart_1.0.0.201206191436.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/poi-3.8-beta4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/poi-examples-3.8-beta4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/poi-excelant-3.8-beta4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/poi-ooxml-3.8-beta4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/poi-ooxml-schemas-3.8-beta4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/poi-scratchpad-3.8-beta4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/velocity-1.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

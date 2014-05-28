@@ -1,0 +1,18 @@
+package $package;
+
+public class $pageClass  {
+	#foreach($bo in ${pageList})
+private String $bo.identify;
+	#end 
+
+	#foreach($bo in ${pageList})
+public String get${bo.methodName}() {
+		return $bo.identify;
+	}
+	public void set${bo.methodName}(String $bo.identify) {
+		this.$bo.identify = $bo.identify;
+	}
+
+	#end
+
+}

@@ -1,0 +1,51 @@
+package $package;
+import $pageClassPackage;
+import com.wonders.core.*;
+#if($isDataDriver==true)
+import ${excelDataClassPackage}.${excelDataClassName};
+#end
+public class $serviceClass {
+
+	#if($isDataDriver==true)
+public static void ${serviceMethodName}($excelDataClassName $excelDataClassNameVar){
+	#foreach($bo in ${pageList})
+	#if($bo.type=="chk"||$bo.type=="rdo")
+$pageClass.${bo.type}${bo.methodName}().click();
+#else
+$pageClass.${bo.type}${bo.methodName}().typeText(${excelDataClassNameVar}.get${bo.methodName}());
+#end
+	#end 
+
+		$pageClass.${submitBtnType}${submitBtnmethodName}().click();
+	}
+
+	#if($pageType=="edit"||$pageType=="view")
+public static void checkData($excelDataClassName $excelDataClassNameVar) {
+	#foreach($bo in ${pageList})
+	Assertion.AssertEquals($pageClass.${bo.type}${bo.methodName}().getValue(), ${excelDataClassNameVar}.get${bo.methodName}());
+	#end 
+}
+	#end
+	#else
+public static void ${serviceMethodName}(){
+	#foreach($bo in ${pageList})
+	#if($bo.type=="chk"||$bo.type=="rdo")
+$pageClass.${bo.type}${bo.methodName}().click();
+#else
+$pageClass.${bo.type}${bo.methodName}().typeText("");
+#end
+	#end 
+
+		$pageClass.${submitBtnType}${submitBtnmethodName}().click();
+	}
+
+	#if($pageType=="edit"||$pageType=="view")
+public static void checkData() {
+	#foreach($bo in ${pageList})
+	Assertion.AssertEquals($pageClass.${bo.type}${bo.methodName}().getValue(), "");
+	#end
+}
+	#end
+	#end
+		
+}

@@ -1,0 +1,20 @@
+package $package;
+import browser.common.*;
+import com.wonders.core.BaseHome;
+
+public class $pageClass extends BaseHome {
+
+	#foreach($bo in ${pageList})
+	#if($bo.type=="tbl")
+public static ${bo.controlObject} ${bo.type}${bo.methodName}(){
+			return driver.${bo.findMethod}(Find.by${bo.identifyFlag}("$bo.identify"));
+		}
+	#else
+public static ${bo.controlObject} ${bo.type}${bo.methodName}() {
+			return driver.${bo.findMethod}(Find.by${bo.identifyFlag}("$bo.identify"));
+		}
+	#end
+
+	#end  
+	
+}
